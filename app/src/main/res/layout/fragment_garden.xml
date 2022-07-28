@@ -6,11 +6,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            style="@style/TextAppearance.AppCompat.Display1"
+        <Button
+            android:id="@+id/btn_garden_to_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="GARDEN FRAGMENT" />
+            android:text="garden list fragment\n\n move to detail fragment"/>
+            />
     </FrameLayout>
 </layout>

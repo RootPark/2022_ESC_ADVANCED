@@ -23,8 +23,14 @@ class PlantListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnToDetail.setOnClickListener {
-
+        binding.btnListToDetail.setOnClickListener {
+            navigateToPlant()
         }
+    }
+
+    private fun navigateToPlant() {
+        val direction =
+            HomeViewPagerFragmentDirections.actionHomeViewPagerFragmentToPlantDetailFragment()
+        findNavController().navigate(direction)
     }
 }

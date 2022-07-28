@@ -7,5 +7,21 @@
     <fragment
         android:id="@+id/homeViewPagerFragment"
         android:name="com.sejin.example.sunflower_clone.HomeViewPagerFragment"
-        android:label="HomeViewPagerFragment" />
+        android:label="HomeViewPagerFragment" >
+        <action
+            android:id="@+id/action_homeViewPagerFragment_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/plantDetailFragment"
+        android:name="com.sejin.example.sunflower_clone.PlantDetailFragment"
+        android:label="PlantDetailFragment" >
+        <action
+            android:id="@+id/action_plantDetailFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.sejin.example.sunflower_clone.GalleryFragment"
+        android:label="GalleryFragment" />
 </navigation>
