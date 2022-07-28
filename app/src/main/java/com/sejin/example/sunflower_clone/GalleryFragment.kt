@@ -5,18 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.sejin.example.sunflower_clone.databinding.FragmentGardenBinding
+import com.sejin.example.sunflower_clone.databinding.FragmentGalleryBinding
 
-class GardenFragment : Fragment() {
-
-    private lateinit var binding: FragmentGardenBinding
-
+class GalleryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentGardenBinding.inflate(inflater, container, false)
-        return binding.root
+        val binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 }
