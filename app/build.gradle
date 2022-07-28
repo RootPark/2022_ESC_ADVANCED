@@ -45,6 +45,8 @@ dependencies {
 
     implementation("androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion")
+    implementation("io.coil-kt:coil:2.1.0")
+
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
