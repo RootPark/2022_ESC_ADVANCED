@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.sejin.example.sunflower_clone.adapters.PlantAdapter
-import com.sejin.example.sunflower_clone.data.Plant
-import com.sejin.example.sunflower_clone.data.dummyList
+import com.sejin.example.sunflower_clone.data.plantsList
 import com.sejin.example.sunflower_clone.databinding.FragmentPlantingListBinding
 
 class PlantListFragment : Fragment() {
@@ -22,7 +21,7 @@ class PlantListFragment : Fragment() {
     ): View {
         binding = FragmentPlantingListBinding.inflate(inflater, container, false)
         val adapter = PlantAdapter()
-        adapter.submitList(dummyList)
+        adapter.submitList(plantsList)
         binding.plantList.adapter = adapter
         return binding.root
     }
