@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.sejin.example.sunflower_clone.databinding.FragmentPlantingListBinding
 
 class PlantListFragment : Fragment() {
@@ -22,7 +23,7 @@ class PlantListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnToGallery.setOnClickListener {
+        binding.btnToDetail.setOnClickListener {
 
         }
     }
