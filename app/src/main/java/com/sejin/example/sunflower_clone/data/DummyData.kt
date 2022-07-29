@@ -1,7 +1,5 @@
 package com.sejin.example.sunflower_clone.data
 
-
-
 private val apple = Plant(
     plantId = "1",
     name = "apple",
@@ -102,3 +100,13 @@ val plantsList = arrayListOf<Plant>()
         add(orange)
         add(tomato)
     }
+
+object dummyDatabase {
+    fun getPlantById(id: String): Plant {
+        for (plant in plantsList) {
+            if (plant.plantId == id)
+                return plant
+        }
+        throw IllegalStateException()
+    }
+}

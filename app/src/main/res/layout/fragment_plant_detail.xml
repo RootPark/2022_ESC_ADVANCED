@@ -33,6 +33,12 @@
                 app:titleEnabled="false"
                 app:toolbarId="@id/toolbar">
 
+                <ImageView
+                    android:id="@+id/detail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/plant_detail_image_content_description"/>
+
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -44,8 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="plant detail fragment\n\nmove to gallery"
-            />
+            android:text="plant detail fragment\n\nmove to gallery" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

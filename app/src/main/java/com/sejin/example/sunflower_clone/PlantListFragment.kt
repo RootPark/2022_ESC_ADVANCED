@@ -30,9 +30,4 @@ class PlantListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    private fun navigateToPlant() {
-        val direction =
-            HomeViewPagerFragmentDirections.actionHomeViewPagerFragmentToPlantDetailFragment()
-        findNavController().navigate(direction)
-    }
 }

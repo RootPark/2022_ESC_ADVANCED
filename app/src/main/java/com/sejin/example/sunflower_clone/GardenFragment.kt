@@ -16,7 +16,7 @@ class GardenFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentGardenBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -29,8 +29,8 @@ class GardenFragment : Fragment() {
     }
 
     private fun navigateToPlant() {
-        val direction =
-            HomeViewPagerFragmentDirections.actionHomeViewPagerFragmentToPlantDetailFragment()
-        findNavController().navigate(direction)
+//        val direction =
+//            HomeViewPagerFragmentDirections.actionHomeViewPagerFragmentToPlantDetailFragment()
+//        findNavController().navigate(direction)
     }
 }
