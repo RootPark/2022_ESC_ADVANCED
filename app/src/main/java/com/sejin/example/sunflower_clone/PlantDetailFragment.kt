@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
+import com.sejin.example.sunflower_clone.data.Plant
 import com.sejin.example.sunflower_clone.data.dummyDatabase
 import com.sejin.example.sunflower_clone.databinding.FragmentPlantDetailBinding
 
@@ -15,6 +16,7 @@ class PlantDetailFragment : Fragment() {
 
     val args: PlantDetailFragmentArgs by navArgs()
     lateinit var binding: FragmentPlantDetailBinding
+    lateinit var plant : Plant
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,8 +31,8 @@ class PlantDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val id = args.plantId
-        val plant = dummyDatabase.getPlantById(id)
+        val id = args.id
+        plant = dummyDatabase.getPlantById(id)
         binding.detailImage.load(plant.imageUrl)
         binding.btnDetailToGallery.setOnClickListener { navigateToGallery() }
 
@@ -38,7 +40,7 @@ class PlantDetailFragment : Fragment() {
 
     private fun navigateToGallery() {
         val direction =
-            PlantDetailFragmentDirections.actionPlantDetailFragmentToGalleryFragment()
+            PlantDetailFragmentDirections.actionPlantDetailFragmentToGalleryFragment(name = plant.name)
         findNavController().navigate(direction)
     }
 }

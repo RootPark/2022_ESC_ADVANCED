@@ -20,11 +20,15 @@
             android:id="@+id/action_plantDetailFragment_to_galleryFragment"
             app:destination="@id/galleryFragment" />
         <argument
-            android:name="plantId"
+            android:name="id"
             app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/galleryFragment"
         android:name="com.sejin.example.sunflower_clone.GalleryFragment"
-        android:label="GalleryFragment" />
+        android:label="GalleryFragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
 </navigation>
