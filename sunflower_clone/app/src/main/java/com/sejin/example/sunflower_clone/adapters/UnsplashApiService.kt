@@ -33,6 +33,14 @@ interface UnsplashService {
         @Query("per_page") perPage: Int,
         @Query("client_id") clientId: String = BuildConfig.UNSPLASH_ACCESS_KEY
     ): Call<UnsplashSearchResponse>
+
+    @GET("search/photos")
+    suspend fun searchPhotosCouroutine(
+        @Query("query") query: String,
+        @Query("page") page: Int,
+        @Query("per_page") perPage: Int,
+        @Query("client_id") clientId: String = BuildConfig.UNSPLASH_ACCESS_KEY
+    ): UnsplashSearchResponse
 }
 
 object UnsplashApi {

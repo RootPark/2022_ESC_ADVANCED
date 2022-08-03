@@ -10,11 +10,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
+import com.sejin.example.sunflower_clone.adapters.PhotoAdapter
 import com.sejin.example.sunflower_clone.databinding.FragmentGalleryBinding
 
 class GalleryFragment : Fragment() {
 
-    val args: PlantDetailFragmentArgs by navArgs()
+    val args: GalleryFragmentArgs by navArgs()
+    lateinit var binding : FragmentGalleryBinding
 
     private lateinit var viewModel: GalleryViewModel
 
@@ -23,7 +25,7 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        binding = FragmentGalleryBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -31,14 +33,16 @@ class GalleryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this).get(GalleryViewModel::class.java)
-        showToastDelayed()
+        viewModel.getPhotos(args.name)
 
-    }
+        val adapter = PhotoAdapter()
+        binding.rcvGallery.adapter = adapter
 
-    private fun showToastDelayed() {
-        Handler().postDelayed({
-            Toast.makeText(requireContext(), "${viewModel.photos.size}", Toast.LENGTH_SHORT).show()
-        }, 3000)
 
+
+        viewModel.photos.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+//            Toast.makeText(requireContext(), "${it.size}개 받았습니다.", Toast.LENGTH_SHORT).show()
+        }
     }
 }
