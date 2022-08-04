@@ -32,12 +32,17 @@ class PlantAdapter : ListAdapter<Plant, RecyclerView.ViewHolder>(PlantDiffCallba
     class PlantViewHolder(private val binding: ListItemPlantBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Plant) {
-
-            binding.apply {
-                root.setOnClickListener { navigateToPlant(item, this.root) }
-                plantItemImage.load(item.imageUrl)
-                plantItemTitle.text = item.name
+            binding.plant = item
+            binding.setClickListener {
+                navigateToPlant(item, it)
             }
+            binding.plantItemImage.load(item.imageUrl)
+
+//            binding.apply {
+//                root.setOnClickListener { navigateToPlant(item, this.root) }
+
+//                plantItemTitle.text = item.name
+//            }
         }
 
         private fun navigateToPlant(plant: Plant, view: View) {
